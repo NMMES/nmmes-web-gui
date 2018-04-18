@@ -1,0 +1,25 @@
+// .babelrc
+{
+    "env": {
+        "production": {
+            "presets": [
+                "@babel/preset-react", ["@babel/preset-env", {
+                    "targets": {
+                        "browsers": ["last 2 versions"]
+                    }
+                }]
+            ],
+            "plugins": ["@babel/plugin-proposal-object-rest-spread", "@babel/plugin-proposal-class-properties"]
+        },
+        "development": {
+            "presets": [
+                "@babel/preset-react", ["@babel/preset-env", {
+                    "targets": {
+                        "browsers": ["last 2 Chrome versions", "last 2 Firefox versions"]
+                    }
+                }]
+            ],
+            "plugins": ["@babel/plugin-proposal-object-rest-spread", "@babel/plugin-proposal-class-properties", "react-hot-loader/babel"]
+        }
+    }
+}

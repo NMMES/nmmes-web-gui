@@ -1,0 +1,91 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    button {
+        border: none;
+        padding: 0.8em 1.4em;
+        margin: 0 0.4em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        font-weight: 500;
+
+        &.drop-down {
+            &:after {
+                .material-icons;
+                margin-left: 0.5em;
+                margin-right: -0.3em;
+                content: 'keyboard_arrow_down';
+            }
+
+            &.active:after {
+                content: 'keyboard_arrow_up';
+            }
+        }
+
+        &.error {
+            @color: #c0392b;
+            background-color: @color;
+            color: white;
+
+            &:hover {
+                background: linear-gradient(45deg, lighten(@color, 1%), darken(@color, 5%));
+            }
+        }
+
+        &.attention {
+            @color: #392C70;
+            // background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+            background: linear-gradient(45deg, lighten(@color, 12%), @color);
+            // box-shadow: 0 8px 8px -8px fade(@color, 80%);
+            color: white;
+
+            &:hover {
+                background: linear-gradient(45deg, lighten(@color, 15%), @color);
+            }
+        }
+    }
+}
+
+.nmmes-progressbar {
+    height: 1px;
+    .bar {
+        height: 100%;
+    }
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}

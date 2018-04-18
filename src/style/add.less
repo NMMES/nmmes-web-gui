@@ -1,0 +1,126 @@
+.nmmes-page-add {
+    padding: 2em;
+    background-color: #F8F8F8;
+
+    .nmmes-dropzone {
+        // background: repeating-linear-gradient(45deg, fade(#606dbc, 30%), fade(#606dbc, 30%) 10px, fade(#465298, 30%) 10px, fade(#465298, 30%) 20px);
+        background-color: fade(white, 50%);
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10h10v10H0V10zM10 0h10v10H10V0z' fill='%23f5fdff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+        padding: 2em;
+        border: 1px solid lightgrey;
+        cursor: pointer;
+    }
+
+    .directory-list {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 0;
+        margin-right: 0.5em;
+        border-right: 2px solid #04BFBF;
+
+        .nmmes-directory-list {
+            list-style-type: none;
+            border-left: 1px solid lightgrey;
+            margin-left: 0.8em;
+            padding-left: 0.8em;
+        }
+    }
+
+    .nmmes-directory {
+        &.error {
+            > .nmmes-directory-info {
+                cursor: not-allowed;
+
+                &:hover {
+                    background-color: #FEA6B4;
+                }
+            }
+        }
+
+        > .nmmes-directory-info {
+            padding: 0.2em;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: lightgrey;
+            }
+
+            .name {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 0 0.3em;
+            }
+
+            .nmmes-directory-icon {
+                font-size: 1.2em;
+                padding: 0.2em;
+            }
+        }
+
+        &.active {
+            > .nmmes-directory-info {
+                background-color: #04BFBF;
+                color: white;
+            }
+        }
+    }
+
+    .directory-contents {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-column-gap: 0.5em;
+        grid-row-gap: 0;
+    }
+
+    .nmmes-file {
+        display: grid;
+        grid-template-columns: auto auto 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 10px;
+
+        &:hover > * {
+            background-color: lightgrey;
+        }
+
+        &.active > * {
+            background-color: #04BFBF;
+            color: white;
+        }
+
+        > * {
+            padding: 0.2em;
+        }
+
+        .name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .file-manager {
+        padding: 1em;
+        margin: 1em;
+        border: 1px solid lightgrey;
+        border-radius: 3px;
+        height: 100%;
+        display: flex;
+        width: 60vw;
+        align-items: flex-start;
+    }
+
+    .controls {
+        > * {
+            float: right;
+        }
+    }
+    .nmmes-file-preview {
+        max-width: 600px;
+        width: 30%;
+    }
+}
